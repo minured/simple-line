@@ -6,7 +6,17 @@
 </template>
 
 <script>
-  export default {}
+  export default {
+  //  对子元素进行检查
+    mounted() {
+      for (let node of this.$el.children) {
+        const name = node.nodeName.toLowerCase()
+        if (name !== "button") {
+          console.warn(`sl-button-group 的子元素应该全部都是 sl-button, 但是其中包含了 ${name}`)
+        }
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>

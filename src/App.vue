@@ -15,6 +15,7 @@
     >右边icon</sl-button>
 
     <sl-button-group>
+      <div></div>
       <sl-button icon-name="left">上一页</sl-button>
       <sl-button>更多</sl-button>
       <sl-button icon-name="right" icon-position="right">下一页</sl-button>
