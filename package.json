@@ -1,0 +1,9 @@
+{
+  "name": "simple-line",
+  "version": "1.0.0",
+  "description": "这是一个UI框架",
+  "main": "index.js",
+  "repository": "git@github.com:minured/simple-line.git",
+  "author": "minured <1296900813@qq.com>",
+  "license": "MIT"
+}
