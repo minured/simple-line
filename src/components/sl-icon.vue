@@ -8,7 +8,7 @@ export default {
   props:['iconName']
 }
 </script>
-<style>
+<style scoped>
   .icon {
     margin-right: 5px;
     width: 1.2em;

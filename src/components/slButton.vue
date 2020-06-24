@@ -1,7 +1,11 @@
 <template>
   <!-- 变量用[]包起来 -->
-  <button class="sl-button" :class="{[`icon-${iconPosition}`]: true}">
-    <sl-icon v-if="iconName" :icon-name="iconName"></sl-icon>
+  <button class="sl-button"
+          :class="{[`icon-${iconPosition}`]: true}"
+          @click="$emit('click')"
+  >
+    <sl-icon icon-name="loading" class="loading" v-if="loading"></sl-icon>
+    <sl-icon v-if="iconName && !loading" :icon-name="iconName"></sl-icon>
     <slot></slot>
   </button>
 </template>
@@ -23,11 +27,23 @@
         //  value就是用户传的值
           return !(value !== 'left' && value !== 'right');
         }
+      },
+      loading: {
+        type: Boolean,
+        default: false,
       }
     }
   }
 </script>
 <style lang="scss" scoped>
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
   .sl-button {
     display: inline-flex;
@@ -52,7 +68,6 @@
     &:active {
       background: var(--button-active-bg);
     }
-
     &:focus {
       outline: none;
     }
@@ -62,6 +77,9 @@
         margin-right: 0;
         margin-left: 5px;
       }
+    }
+    .loading {
+      animation: spin 1.5s infinite linear;
     }
   }
 
