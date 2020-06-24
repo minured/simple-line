@@ -11,7 +11,20 @@
 <script>
   export default {
     name: 'SLButton',
-    props: ['iconName', 'iconPosition']
+    // props: ['iconName', 'iconPosition']
+  //  设置props的属性
+    props: {
+      iconName: {},
+      iconPosition: {
+        type: String,
+        default: "left",
+        //属性检查器
+        validator(value) {
+        //  value就是用户传的值
+          return !(value !== 'left' && value !== 'right');
+        }
+      }
+    }
   }
 </script>
 <style lang="scss" scoped>
@@ -43,12 +56,6 @@
     &:focus {
       outline: none;
     }
-
-    /*&.icon-left {*/
-    /*  > .content {*/
-    /*    order: 1;*/
-    /*  }*/
-    /*}*/
     &.icon-right {
       > .icon {
         order: 2;
