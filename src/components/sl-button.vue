@@ -44,7 +44,6 @@
       transform: rotate(360deg);
     }
   }
-
   .sl-button {
     display: inline-flex;
     justify-content: center;
@@ -56,7 +55,6 @@
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
     background: var(--button-bg);
-
     margin-bottom: 5px;
     vertical-align: middle;
 
@@ -64,7 +62,6 @@
       border-color: var(--border-color-hover);
       box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     }
-
     &:active {
       background: var(--button-active-bg);
     }

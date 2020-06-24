@@ -13,12 +13,20 @@
                :loading="loading3"
                @click="loading3=!loading3"
     >右边icon</sl-button>
+
+    <sl-button-group>
+      <sl-button icon-name="left">上一页</sl-button>
+      <sl-button>更多</sl-button>
+      <sl-button icon-name="right" icon-position="right">下一页</sl-button>
+    </sl-button-group>
+
   </div>
 </template>
 
 <script>
-  import slButton from './components/slButton'
+  import slButton from './components/sl-button'
   import slIcon from './components/sl-icon'
+  import slButtonGroup from "./components/sl-button-group"
   export default {
     data() {
       return {
@@ -28,7 +36,7 @@
       }
     },
     name:"App",
-    components:{slButton, slIcon}
+    components:{slButton, slIcon, slButtonGroup}
   }
 </script>
 
