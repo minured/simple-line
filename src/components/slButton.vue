@@ -1,16 +1,16 @@
 <template>
   <!-- 变量用[]包起来 -->
   <button class="sl-button" :class="{[`icon-${iconPosition}`]: true}">
-    <svg class="icon" aria-hidden="true" v-if="iconName">
-      <use :xlink:href="`#icon-${iconName}`"></use>
-    </svg>
+    <sl-icon v-if="iconName" :icon-name="iconName"></sl-icon>
     <slot></slot>
   </button>
 </template>
 
 <script>
+  import SlIcon from './sl-icon'
   export default {
     name: 'SLButton',
+    components: {SlIcon},
     // props: ['iconName', 'iconPosition']
   //  设置props的属性
     props: {
